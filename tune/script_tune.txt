@@ -1,0 +1,14 @@
+execute dbms_stats.gather_table_stats(ownname => 'DB2ADMIN', tabname => 'MV_LH_CONTRACT_CAR', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE AUTO');
+execute dbms_stats.gather_table_stats(ownname => 'DB2ADMIN', tabname => 'MV_LH_CONTRACT_BALANCE', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE AUTO');
+execute dbms_stats.gather_table_stats(ownname => 'DB2ADMIN', tabname => 'MV_LH_CONTRACT_MASTER', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE AUTO');
+execute dbms_stats.gather_table_stats(ownname => 'DB2ADMIN', tabname => 'MV_CT_CUSTOMER5', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE AUTO');
+
+execute dbms_stats.gather_table_stats(ownname => 'DB2ADMIN', tabname => 'MV_LH_OUTSTANDING', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE AUTO');
+execute dbms_stats.gather_table_stats(ownname => 'DB2ADMIN', tabname => 'MV_LH_CONTRACT_INSTALMENT', estimate_percent => DBMS_STATS.AUTO_SAMPLE_SIZE, method_opt => 'FOR ALL COLUMNS SIZE AUTO');
+--MV_LH_OUTSTANDING
+--MV_LH_CONTRACT_INSTALMENT
+
+
+execute dbms_sqltune.accept_sql_profile(task_name => 'staName32424', replace => TRUE);
+
+create index DB2ADMIN.IDX_MV_contractmaster on DB2ADMIN.MV_LH_CONTRACT_MASTER("HC_CA_RUNNO_SHOW","HC_CA_RUNNO","HC_CA_YEAR","HC_CA_BRN","HC_CA_SYS");
