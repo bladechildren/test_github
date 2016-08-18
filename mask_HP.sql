@@ -40,6 +40,6 @@ ca_email = '1' || ca_email
 -----------------  Contract -----------------
 UPDATE db2admin.lh_contract_master 
 SET set hc_cust_name = 'cust_name' || hc_cn_runno_show;
-
+-----------------   -----------------
 -----------------   -----------------
 
